@@ -6,7 +6,9 @@
   "scripts": {
     "frontend:serve": "cd frontend && yarn serve",
     "frontend:build": "cd frontend && yarn build",
-    "frontend:lint": "cd frontend && yarn lint"
+    "frontend:lint": "cd frontend && yarn lint",
+    "backend:start": "cd backend && yarn start",
+    "backend:dev": "cd frontend && yarn dev"
   },
   "author": "",
   "license": "ISC",
