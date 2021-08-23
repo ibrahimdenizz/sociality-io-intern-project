@@ -1,0 +1,23 @@
+{
+  "name": "sociality-io-intern-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "frontend:serve": "cd frontend && yarn serve",
+    "frontend:build": "cd frontend && yarn build",
+    "frontend:lint": "cd frontend && yarn lint"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "mongoose": "^5.13.8",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.1"
+  }
+}
