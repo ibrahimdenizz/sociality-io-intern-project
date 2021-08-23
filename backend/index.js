@@ -2,10 +2,22 @@ const express = require("express");
 const helmet = require("helmet");
 const morgan = require("morgan");
 const cors = require("cors");
+const mongoose = require("mongoose");
 
 const app = express();
 
 const productRouter = require("./routers/product");
+
+const DB_URI = process.env.DB_URI || "mongodb://localhost/internProject";
+
+mongoose
+  .connect(DB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("Connect DB");
+  });
 
 app.use(express.json());
 app.use(morgan("dev"));
