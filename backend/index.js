@@ -3,6 +3,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const path = require("path");
 
 const app = express();
 
@@ -25,6 +26,14 @@ app.use(helmet());
 app.use(cors());
 
 app.use("/api/product", productRouter);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.resolve("dist")));
+
+  app.get("*", (req, res) => {
+    return res.sendFile(path.resolve("dist", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 3000;
 
