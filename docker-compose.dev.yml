@@ -1,0 +1,34 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: dev.Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - ./backend:/code
+      - /code/node_modules
+    environment:
+      - DB_URI=mongodb://mongo:27017
+    links:
+      - mongo
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: dev.Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - ./frontend:/code
+      - /code/node_modules
+    links:
+      - backend
+  mongo:
+    image: mongo:4.4.6
+    logging:
+      driver: none
+    ports:
+      - 27017:27017
+    volumes:
+      - /var/lib/mongodb:/data/db
