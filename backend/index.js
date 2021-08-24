@@ -9,10 +9,10 @@ const app = express();
 
 const productRouter = require("./routers/product");
 
-const DB_URI = process.env.DB_URI || "mongodb://localhost/internProject";
+const DB_URI = process.env.DB_URI || "mongodb://localhost";
 
 mongoose
-  .connect(DB_URI, {
+  .connect(DB_URI + "/internProject", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
