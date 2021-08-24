@@ -8,7 +8,7 @@ async function scrapeProduct(url, { soldOut } = { soldOut: false }) {
   const name = $('[data-buy-box-listing-title="true"]').text().trim();
 
   if (soldOut === true && !name) {
-    throw new Error("Product not found");
+    throw new Error("The product is not found");
   }
   if (!name) {
     return scrapeProduct(url + "?show_sold_out_detail=1", { soldOut: true });

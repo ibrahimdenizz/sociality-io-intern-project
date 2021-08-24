@@ -8,17 +8,10 @@
     "frontend:build": "cd frontend && yarn build",
     "frontend:lint": "cd frontend && yarn lint",
     "backend:start": "cd backend && yarn start",
-    "backend:dev": "cd frontend && yarn dev"
+    "backend:dev": "cd backend && yarn dev"
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "helmet": "^4.6.0",
-    "mongoose": "^5.13.8",
-    "morgan": "^1.10.0"
-  },
   "devDependencies": {
     "concurrently": "^6.2.1"
   }
