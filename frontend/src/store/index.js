@@ -17,7 +17,7 @@ export default createStore({
   actions: {
     async getProducts({ state, commit }) {
       try {
-        const response = await fetch(state.config.API_URL + "product").then(
+        const response = await fetch(state.config.API_URL + "api/product").then(
           (response) => response.json()
         );
         commit("updateProducts", response);

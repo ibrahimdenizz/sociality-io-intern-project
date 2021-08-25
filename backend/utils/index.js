@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const cheerio = require("cheerio");
 
 async function scrapeProduct(url, { soldOut } = { soldOut: false }) {
-  let html = await fetch(url).then((res) => res.text());
+  const html = await fetch(url).then((res) => res.text());
   let $ = cheerio.load(html);
 
   const name = $('[data-buy-box-listing-title="true"]').text().trim();

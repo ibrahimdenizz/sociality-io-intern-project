@@ -26,7 +26,7 @@ export default {
     ...mapState(["config"]),
   },
   beforeMount() {
-    fetch(this.config.API_URL + "product?id=" + this.id)
+    fetch(this.config.API_URL + "api/product?id=" + this.id)
       .then((res) => res.json())
       .then((res) => (this.product = res.data));
   },

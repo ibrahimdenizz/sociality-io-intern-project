@@ -42,7 +42,7 @@ export default {
   methods: {
     addProduct() {
       this.addingStatus = "pending";
-      fetch(this.config.API_URL + "product/add", {
+      fetch(this.config.API_URL + "api/product/add", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
