@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  production:
+    build:
+      context: .
+      dockerfile: prod.Dockerfile
+    ports:
+      - 3000:3000
+    environment:
+      - DB_URI=mongodb://localhost:27017
+      - PORT=3000
